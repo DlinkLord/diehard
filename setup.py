@@ -27,7 +27,7 @@ def get_version():
     with open(os.path.join('diehard', '__init__.py')) as version_file:
         # pylint: disable=exec-used, undefined-variable
         exec(version_file.read(), globals())
-        return __version__
+        return sys._version_info
 
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist bdist_wheel')
